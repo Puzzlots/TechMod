@@ -22,10 +22,4 @@ public class MainMenuMixin {
         Constants.LOGGER.info("THE END OF THE MAIN MENU's create()");
     }
 
-    @Redirect(method = "create", at = @At(value = "INVOKE", target = "Lfinalforeach/cosmicreach/ui/UIElement;setText(Ljava/lang/String;)V", ordinal = 0))
-    private void setText(UIElement startButton, String text) {
-        startButton.setText("Better Button?");
-    }
-
-
 }
