@@ -5,18 +5,14 @@ import com.github.puzzle.core.localization.ILanguageFile;
 import com.github.puzzle.core.localization.LanguageManager;
 import com.github.puzzle.core.localization.files.LanguageFileVersion1;
 import com.github.puzzle.core.resources.ResourceLocation;
-import com.github.puzzle.game.block.DataModBlock;
 import com.github.puzzle.game.events.OnPreLoadAssetsEvent;
-import com.github.puzzle.game.events.OnRegisterBlockEvent;
 import com.github.puzzle.loader.entrypoint.interfaces.ModInitializer;
 import com.github.puzzlots.techmod.block_entities.ExampleBlockEntity;
-import com.github.puzzlots.techmod.blocks.Bedrock;
-import com.github.puzzlots.techmod.blocks.ElectricFurnace;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.IOException;
 
-public class ExampleMod implements ModInitializer {
+public class TechMod implements ModInitializer {
 
     @Override
     public void onInit() {

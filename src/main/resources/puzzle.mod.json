@@ -11,18 +11,18 @@
   ],
   "entrypoints": {
     "preInit": [
-      "com.github.puzzlots.techmod.ExampleModPreinit"
+      "com.github.puzzlots.techmod.TechModPreinit"
     ],
     "init": [
-      "com.github.puzzlots.techmod.ExampleMod"
+      "com.github.puzzlots.techmod.TechMod"
     ]
   },
   "mixins": [
-    "puzzle.mixins.json"
+    "tech_mod.mixins.json"
   ],
   "dependencies": {
     "cosmic-reach": ">=0.1.44",
     "puzzle-loader": ">=1.1.0"
   },
-  "accessManipulator": "example_mod.manipulator"
+  "accessManipulator": "tech_mod.manipulator"
 }
