@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    mod "com.github.PuzzleLoader:puzzle-language-lua:1.0.1"
 }
 
 processResources {

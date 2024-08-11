@@ -18,7 +18,6 @@
     ]
   },
   "mixins": [
-    "tech_mod.mixins.json"
   ],
   "dependencies": {
     "cosmic-reach": ">=0.1.44",

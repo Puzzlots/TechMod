@@ -1,20 +1,32 @@
 {
-    "parent": "cube",
+    "parent": "puzzle-loader:multi_face_cube",
 
     "textures":
     {
         "top":
         {
-            "fileName": "electric_furnace_side.png"
+            "fileName": "tech-mod:electric_furnace_side.png"
         },
         "bottom":
         {
-            "fileName": "electric_furnace_side.png"
+            "fileName": "tech-mod:electric_furnace_side.png"
         },
-        "side":
+        "right":
         {
-            "fileName": "electric_furnace_off.png"
+            "fileName": "tech-mod:electric_furnace_side.png"
+        },
+        "left":
+        {
+            "fileName": "tech-mod:electric_furnace_side.png"
+        },
+        "back":
+        {
+            "fileName": "tech-mod:electric_furnace_side.png"
+        },
+        "front":
+        {
+            "fileName": "tech-mod:electric_furnace_off.png"
         }
     }
-    
+
 }

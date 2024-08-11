@@ -6,8 +6,9 @@ import com.github.puzzle.core.localization.LanguageManager;
 import com.github.puzzle.core.localization.files.LanguageFileVersion1;
 import com.github.puzzle.core.resources.ResourceLocation;
 import com.github.puzzle.game.events.OnPreLoadAssetsEvent;
+import com.github.puzzle.game.events.OnRegisterBlockEvent;
 import com.github.puzzle.loader.entrypoint.interfaces.ModInitializer;
-import com.github.puzzlots.techmod.block_entities.ExampleBlockEntity;
+import com.github.puzzlots.techmod.blocks.ElectricFurnace;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.IOException;
@@ -19,7 +20,6 @@ public class TechMod implements ModInitializer {
         PuzzleRegistries.EVENT_BUS.register(this);
 
         Constants.LOGGER.info("Hello From INIT");
-        ExampleBlockEntity.register();
     }
 
     @Subscribe
@@ -31,6 +31,11 @@ public class TechMod implements ModInitializer {
             throw new RuntimeException(e);
         }
         LanguageManager.registerLanguageFile(lang);
+    }
+
+    @Subscribe
+    public void onEvent(OnRegisterBlockEvent event) {
+        event.registerBlock(ElectricFurnace::new);
     }
 
 }
