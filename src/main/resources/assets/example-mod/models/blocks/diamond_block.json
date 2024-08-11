@@ -1,0 +1,12 @@
+{
+  "parent": "cube",
+
+  "textures":
+  {
+    "all":
+    {
+      "fileName": "example-mod:diamond_block.png"
+    }
+  }
+
+}
