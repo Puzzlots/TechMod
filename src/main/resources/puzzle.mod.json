@@ -18,7 +18,7 @@
     ]
   },
   "mixins": [
-    "example.mixins.json"
+    "puzzle.mixins.json"
   ],
   "dependencies": {
     "cosmic-reach": ">=0.1.44",
