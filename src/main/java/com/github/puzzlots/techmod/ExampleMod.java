@@ -11,6 +11,7 @@ import com.github.puzzle.game.events.OnRegisterBlockEvent;
 import com.github.puzzle.loader.entrypoint.interfaces.ModInitializer;
 import com.github.puzzlots.techmod.block_entities.ExampleBlockEntity;
 import com.github.puzzlots.techmod.blocks.Bedrock;
+import com.github.puzzlots.techmod.blocks.ElectricFurnace;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.IOException;
@@ -29,6 +30,7 @@ public class ExampleMod implements ModInitializer {
     public void onEvent(OnRegisterBlockEvent event) {
         event.registerBlock(() -> new DataModBlock("diamond_block", new ResourceLocation(Constants.MOD_ID, "blocks/diamond_block.json")));
         event.registerBlock(Bedrock::new);
+        event.registerBlock(ElectricFurnace::new);
     }
 
     @Subscribe
