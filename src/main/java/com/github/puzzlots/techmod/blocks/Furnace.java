@@ -5,6 +5,7 @@ import com.github.puzzle.game.block.IModBlock;
 import com.github.puzzle.game.generators.BlockEventGenerator;
 import com.github.puzzle.game.generators.BlockGenerator;
 import com.github.puzzlots.techmod.Constants;
+import com.github.puzzlots.techmod.block_entities.ElectricFurnaceBlockEntity;
 import finalforeach.cosmicreach.blocks.BlockPosition;
 import finalforeach.cosmicreach.blocks.BlockState;
 import finalforeach.cosmicreach.entities.player.Player;
@@ -47,7 +48,7 @@ public class Furnace implements IModBlock {
         state2.stateGenerators = new String[]{"puzzle-loader:rotated"};
         state2.catalogHidden = true;
         state.allowSwapping = false;
-        generator.addBlockEntity(Constants.MOD_ID+":example_entity", Map.of());
+        generator.addBlockEntity(ElectricFurnaceBlockEntity.id.toString(), Map.of());
         return generator;
     }
 
