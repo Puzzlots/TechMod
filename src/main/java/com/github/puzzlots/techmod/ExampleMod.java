@@ -27,13 +27,6 @@ public class ExampleMod implements ModInitializer {
     }
 
     @Subscribe
-    public void onEvent(OnRegisterBlockEvent event) {
-        event.registerBlock(() -> new DataModBlock("diamond_block", new ResourceLocation(Constants.MOD_ID, "blocks/diamond_block.json")));
-        event.registerBlock(Bedrock::new);
-        event.registerBlock(ElectricFurnace::new);
-    }
-
-    @Subscribe
     public void onEvent(OnPreLoadAssetsEvent event) {
         ILanguageFile lang = null;
         try {
