@@ -1,11 +1,9 @@
 package com.github.puzzlots.techmod.blocks;
 
 import com.github.puzzle.core.Identifier;
-import com.github.puzzle.core.resources.ResourceLocation;
 import com.github.puzzle.game.block.IModBlock;
 import com.github.puzzle.game.generators.BlockEventGenerator;
 import com.github.puzzle.game.generators.BlockGenerator;
-import com.github.puzzle.game.generators.BlockModelGenerator;
 import com.github.puzzlots.techmod.Constants;
 import finalforeach.cosmicreach.blocks.BlockPosition;
 import finalforeach.cosmicreach.blocks.BlockState;
@@ -18,12 +16,10 @@ import finalforeach.cosmicreach.world.Zone;
 import java.util.List;
 import java.util.Map;
 
-public class Bedrock implements IModBlock {
+public class Furnace implements IModBlock {
 
-    public static final Identifier BLOCK_ID = new Identifier(Constants.MOD_ID, "bedrock");
-    public static final String BLOCK_NAME = "bedrock";
-
-    public static final ResourceLocation ALL_TEXTURE = new ResourceLocation("base", "textures/blocks/lunar_soil.png");
+    public static final Identifier BLOCK_ID = new Identifier(Constants.MOD_ID, "Furnace");
+    public static final String BLOCK_NAME = "furnace";
 
     @Override
     public void onBreak(Zone zone, Player player, BlockState blockState, BlockPosition position) {
@@ -43,17 +39,16 @@ public class Bedrock implements IModBlock {
     @Override
     public BlockGenerator getBlockGenerator() {
         BlockGenerator generator = new BlockGenerator(BLOCK_ID, BLOCK_NAME);
-        generator.createBlockState("default", "model", true, "events", true);
+        BlockGenerator.State state = generator.createBlockState("default", "tech-mod:model_electric_furnace_off", false, "events", true);
+        state.stateGenerators = new String[]{"puzzle-loader:rotated"};
+        state.catalogHidden = true;
+        state.allowSwapping = false;
+        BlockGenerator.State state2 = generator.createBlockState("on", "tech-mod:model_electric_furnace_on", false, "events", true);
+        state2.stateGenerators = new String[]{"puzzle-loader:rotated"};
+        state2.catalogHidden = true;
+        state.allowSwapping = false;
         generator.addBlockEntity(Constants.MOD_ID+":example_entity", Map.of());
         return generator;
-    }
-
-    @Override
-    public List<BlockModelGenerator> getBlockModelGenerators(Identifier blockId) {
-        BlockModelGenerator generator = new BlockModelGenerator(blockId, "model");
-        generator.createTexture("all", ALL_TEXTURE);
-        generator.createCuboid(0, 0, 0, 16, 16, 16, "all");
-        return List.of(generator);
     }
 
     @Override

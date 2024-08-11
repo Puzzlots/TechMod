@@ -8,7 +8,9 @@ import com.github.puzzle.core.resources.ResourceLocation;
 import com.github.puzzle.game.events.OnPreLoadAssetsEvent;
 import com.github.puzzle.game.events.OnRegisterBlockEvent;
 import com.github.puzzle.loader.entrypoint.interfaces.ModInitializer;
+import com.github.puzzlots.techmod.block_entities.ExampleBlockEntity;
 import com.github.puzzlots.techmod.blocks.ElectricFurnace;
+import com.github.puzzlots.techmod.blocks.Furnace;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.IOException;
@@ -20,6 +22,7 @@ public class TechMod implements ModInitializer {
         PuzzleRegistries.EVENT_BUS.register(this);
 
         Constants.LOGGER.info("Hello From INIT");
+        ExampleBlockEntity.register();
     }
 
     @Subscribe
@@ -36,6 +39,7 @@ public class TechMod implements ModInitializer {
     @Subscribe
     public void onEvent(OnRegisterBlockEvent event) {
         event.registerBlock(ElectricFurnace::new);
+        event.registerBlock(Furnace::new);
     }
 
 }
