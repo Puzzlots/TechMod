@@ -22,20 +22,6 @@ public class Furnace implements IModBlock {
     public static final Identifier BLOCK_ID = new Identifier(Constants.MOD_ID, "Furnace");
     public static final String BLOCK_NAME = "furnace";
 
-    @Override
-    public void onBreak(Zone zone, Player player, BlockState blockState, BlockPosition position) {
-        ItemSlot slot = UI.hotbar.getSelectedSlot();
-        if(slot == null) return;
-        if(slot.itemStack != null) {
-            Item selected = slot.itemStack.getItem();
-            String itemId = selected.getID();
-            if(itemId.startsWith(BLOCK_ID.toString())) {
-                // make the block breakable when the player holds bedrock
-                IModBlock.super.onBreak(zone, player, blockState, position);
-            }
-        }
-        // make the block unbreakable, by omitting the super call here
-    }
 
     @Override
     public BlockGenerator getBlockGenerator() {
