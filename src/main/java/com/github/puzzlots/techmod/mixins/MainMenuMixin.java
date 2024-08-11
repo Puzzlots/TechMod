@@ -1,8 +1,8 @@
-package org.example.exmod.mixins;
+package com.github.puzzlots.techmod.mixins;
 
+import com.github.puzzlots.techmod.Constants;
 import finalforeach.cosmicreach.gamestates.MainMenu;
 import finalforeach.cosmicreach.ui.UIElement;
-import org.example.exmod.Constants;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

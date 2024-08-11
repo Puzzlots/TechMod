@@ -1,4 +1,4 @@
-package org.example.exmod;
+package com.github.puzzlots.techmod;
 
 import com.github.puzzle.loader.entrypoint.interfaces.PreModInitializer;
 

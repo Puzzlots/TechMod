@@ -4,14 +4,17 @@
   "name": "${mod_name}",
   "description": "${mod_desc}",
   "authors": [
-    "YOU :D"
+    "Mr zombii",
+    "Replet",
+    "crabking",
+    "Mr lemon"
   ],
   "entrypoints": {
     "preInit": [
-      "org.example.exmod.ExampleModPreinit"
+      "com.github.puzzlots.techmod.ExampleModPreinit"
     ],
     "init": [
-      "org.example.exmod.ExampleMod"
+      "com.github.puzzlots.techmod.ExampleMod"
     ]
   },
   "mixins": [

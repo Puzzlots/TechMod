@@ -1,4 +1,4 @@
-package org.example.exmod;
+package com.github.puzzlots.techmod;
 
 import com.github.puzzle.core.Identifier;
 import org.apache.logging.log4j.LogManager;

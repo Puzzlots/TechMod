@@ -1,16 +1,16 @@
-package org.example.exmod.block_entities;
+package com.github.puzzlots.techmod.block_entities;
 
 import com.badlogic.gdx.graphics.Camera;
 import com.github.puzzle.core.Identifier;
 import com.github.puzzle.game.blockentities.ExtendedBlockEntity;
 import com.github.puzzle.game.blockentities.IRenderable;
 import com.github.puzzle.game.blockentities.ITickable;
+import com.github.puzzlots.techmod.Constants;
 import finalforeach.cosmicreach.blockentities.BlockEntityCreator;
 import finalforeach.cosmicreach.blocks.Block;
 import finalforeach.cosmicreach.blocks.BlockPosition;
 import finalforeach.cosmicreach.blocks.BlockState;
 import finalforeach.cosmicreach.world.Zone;
-import org.example.exmod.Constants;
 
 public class ExampleBlockEntity extends ExtendedBlockEntity implements IRenderable, ITickable {
 

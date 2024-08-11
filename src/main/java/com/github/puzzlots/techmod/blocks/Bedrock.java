@@ -1,4 +1,4 @@
-package org.example.exmod.blocks;
+package com.github.puzzlots.techmod.blocks;
 
 import com.github.puzzle.core.Identifier;
 import com.github.puzzle.core.resources.ResourceLocation;
@@ -6,6 +6,7 @@ import com.github.puzzle.game.block.IModBlock;
 import com.github.puzzle.game.generators.BlockEventGenerator;
 import com.github.puzzle.game.generators.BlockGenerator;
 import com.github.puzzle.game.generators.BlockModelGenerator;
+import com.github.puzzlots.techmod.Constants;
 import finalforeach.cosmicreach.blocks.BlockPosition;
 import finalforeach.cosmicreach.blocks.BlockState;
 import finalforeach.cosmicreach.entities.player.Player;
@@ -13,7 +14,6 @@ import finalforeach.cosmicreach.items.Item;
 import finalforeach.cosmicreach.items.ItemSlot;
 import finalforeach.cosmicreach.ui.UI;
 import finalforeach.cosmicreach.world.Zone;
-import org.example.exmod.Constants;
 
 import java.util.List;
 import java.util.Map;

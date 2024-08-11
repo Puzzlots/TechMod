@@ -1,4 +1,4 @@
-package org.example.exmod;
+package com.github.puzzlots.techmod;
 
 import com.github.puzzle.core.PuzzleRegistries;
 import com.github.puzzle.core.localization.ILanguageFile;
@@ -9,8 +9,8 @@ import com.github.puzzle.game.block.DataModBlock;
 import com.github.puzzle.game.events.OnPreLoadAssetsEvent;
 import com.github.puzzle.game.events.OnRegisterBlockEvent;
 import com.github.puzzle.loader.entrypoint.interfaces.ModInitializer;
-import org.example.exmod.block_entities.ExampleBlockEntity;
-import org.example.exmod.blocks.Bedrock;
+import com.github.puzzlots.techmod.block_entities.ExampleBlockEntity;
+import com.github.puzzlots.techmod.blocks.Bedrock;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.IOException;
