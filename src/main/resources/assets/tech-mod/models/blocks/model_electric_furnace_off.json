@@ -1,0 +1,20 @@
+{
+    "parent": "cube",
+
+    "textures":
+    {
+        "top":
+        {
+            "fileName": "electric_furnace_side.png"
+        },
+        "bottom":
+        {
+            "fileName": "electric_furnace_side.png"
+        },
+        "side":
+        {
+            "fileName": "electric_furnace_off.png"
+        }
+    }
+    
+}
