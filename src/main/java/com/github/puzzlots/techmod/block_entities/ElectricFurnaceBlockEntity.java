@@ -13,10 +13,9 @@ import finalforeach.cosmicreach.items.containers.SlotContainer;
 import finalforeach.cosmicreach.world.Zone;
 import com.github.puzzlots.techmod.Constants;
 
-public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements  ITickable {
+public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements ITickable {
 
     public SlotContainer slotContainer;
-
 
     public static Identifier id = new Identifier(Constants.MOD_ID, "electric_furnace_entity");
 
@@ -48,7 +47,7 @@ public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements  
 
     public void onRemove() {
         super.onRemove();
-        this.slotContainer.dropAllItems(this.zone, (float)position.getGlobalX() + 0.5F, (float)position.getGlobalY() + 0.5F, (float)position.getGlobalZ() + 0.5F);
+        this.slotContainer.dropAllItems(this.zone, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
     }
 
     public void read(CRBinDeserializer crbs) {
