@@ -1,22 +1,15 @@
 package com.github.puzzlots.techmod.block_entities;
 
-import com.badlogic.gdx.graphics.Camera;
 import com.github.puzzle.core.Identifier;
 import com.github.puzzle.game.blockentities.ExtendedBlockEntity;
-import com.github.puzzle.game.blockentities.IRenderable;
 import com.github.puzzle.game.blockentities.ITickable;
-import com.github.puzzlots.techmod.FurnaceScreen;
+import com.github.puzzlots.techmod.UI.TechModUI;
 import finalforeach.cosmicreach.blockentities.BlockEntityCreator;
-import finalforeach.cosmicreach.blockentities.BlockEntityItemContainer;
 import finalforeach.cosmicreach.blocks.Block;
 import finalforeach.cosmicreach.blocks.BlockPosition;
-import finalforeach.cosmicreach.blocks.BlockState;
 import finalforeach.cosmicreach.io.CRBinDeserializer;
 import finalforeach.cosmicreach.io.CRBinSerializer;
-import finalforeach.cosmicreach.items.BaseItemScreen;
-import finalforeach.cosmicreach.items.ItemCatalog;
 import finalforeach.cosmicreach.items.containers.SlotContainer;
-import finalforeach.cosmicreach.ui.UI;
 import finalforeach.cosmicreach.world.Zone;
 import com.github.puzzlots.techmod.Constants;
 
@@ -30,7 +23,7 @@ public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements  
     public static void register() {
         BlockEntityCreator.registerBlockEntityCreator(id.toString(), (blockState, zone, x, y, z) -> {
             Block block = blockState.getBlock();
-            int numSlots = getBlockEntityParamInt(block, "numSlots", 1);
+            int numSlots = getBlockEntityParamInt(block, "numSlots", 2);
             return new ElectricFurnaceBlockEntity(zone, x, y, z,new SlotContainer(numSlots));
         });
 
@@ -45,12 +38,13 @@ public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements  
     public String getBlockEntityId() {
         return id.toString();
     }
+
     @Override
     public void onInteract(Zone zone, BlockPosition blockPos, boolean interactJustPressed, boolean interactHeld, double timeSinceLastInteract) {
-        UI.addOpenContainer(this.slotContainer);
+        //UI.addOpenContainer(this.slotContainer);
+        TechModUI.OpenFurnace(this.slotContainer);
 
     }
-
 
     public void onRemove() {
         super.onRemove();

@@ -1,17 +1,13 @@
-package com.github.puzzlots.techmod;
+package com.github.puzzlots.techmod.UI;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import finalforeach.cosmicreach.entities.player.Player;
-import finalforeach.cosmicreach.gamestates.InGame;
 import finalforeach.cosmicreach.items.BaseItemScreen;
 import finalforeach.cosmicreach.items.ISlotContainer;
 import finalforeach.cosmicreach.items.ItemSlotWidget;
-import finalforeach.cosmicreach.items.containers.CraftingSlotContainer;
 import finalforeach.cosmicreach.ui.UI;
-import finalforeach.cosmicreach.world.Zone;
 
 public class FurnaceScreen extends BaseItemScreen {
     public ISlotContainer container;
@@ -24,7 +20,7 @@ public class FurnaceScreen extends BaseItemScreen {
         this.container = container;
         int numSlots = container.getNumSlots();
         Stack stack = new Stack();
-        Actor background = new Image(UI.container9Patch);
+        Actor background = new Image(UI.container9Patch);//TechModUI.Furnace9Patch
         Table slotActorTable = new Table();
         this.slotWidgets = new ItemSlotWidget[numSlots];
 
@@ -51,5 +47,8 @@ public class FurnaceScreen extends BaseItemScreen {
         this.slotActor = stack;
         this.init();
     }
-
 }
+
+
+
+

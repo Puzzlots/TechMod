@@ -6,13 +6,6 @@ import com.github.puzzle.game.generators.BlockEventGenerator;
 import com.github.puzzle.game.generators.BlockGenerator;
 import com.github.puzzlots.techmod.Constants;
 import com.github.puzzlots.techmod.block_entities.ElectricFurnaceBlockEntity;
-import finalforeach.cosmicreach.blocks.BlockPosition;
-import finalforeach.cosmicreach.blocks.BlockState;
-import finalforeach.cosmicreach.entities.player.Player;
-import finalforeach.cosmicreach.items.Item;
-import finalforeach.cosmicreach.items.ItemSlot;
-import finalforeach.cosmicreach.ui.UI;
-import finalforeach.cosmicreach.world.Zone;
 
 import java.util.List;
 import java.util.Map;
