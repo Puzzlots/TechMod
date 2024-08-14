@@ -22,14 +22,6 @@ import static finalforeach.cosmicreach.ui.UI.itemCatalog;
 import static finalforeach.cosmicreach.ui.UI.openContainers;
 
 public class TechModUI {
-    public static NinePatch Furnace9Patch;
-    public static NinePatch FurnaceSelected9Patch;
-
-    public TechModUI() {
-        Furnace9Patch = new NinePatch(new Texture(GameAssetLoader.loadAsset("textures/ui/container.png")), 4, 4, 4, 4);
-        FurnaceSelected9Patch = new NinePatch(new Texture(GameAssetLoader.loadAsset("textures/ui/container-selected.png")), 4, 4, 4, 4);
-
-    }
 
     public static void OpenFurnace(final SlotContainer container) {
         Constants.LOGGER.info("Furnace Open");

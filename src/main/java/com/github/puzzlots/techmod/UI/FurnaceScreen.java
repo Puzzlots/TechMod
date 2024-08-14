@@ -1,15 +1,23 @@
 package com.github.puzzlots.techmod.UI;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.github.puzzlots.techmod.Constants;
+import finalforeach.cosmicreach.GameAssetLoader;
 import finalforeach.cosmicreach.items.BaseItemScreen;
 import finalforeach.cosmicreach.items.ISlotContainer;
 import finalforeach.cosmicreach.items.ItemSlotWidget;
+import finalforeach.cosmicreach.items.containers.CraftingSlotContainer;
 import finalforeach.cosmicreach.ui.UI;
 
 public class FurnaceScreen extends BaseItemScreen {
+
+    public static NinePatch Furnace9Patch = new NinePatch(new Texture(GameAssetLoader.loadAsset("tech-mod:textures/ui/furnace.png")), 4, 4, 4, 4);
+    public static NinePatch FurnaceSelected9Patch = new NinePatch(new Texture(GameAssetLoader.loadAsset("tech-mod:textures/ui/container-selected.png")), 4, 4, 4, 4);
     public ISlotContainer container;
 
     public FurnaceScreen(ISlotContainer container) {
@@ -20,7 +28,7 @@ public class FurnaceScreen extends BaseItemScreen {
         this.container = container;
         int numSlots = container.getNumSlots();
         Stack stack = new Stack();
-        Actor background = new Image(UI.container9Patch);//TechModUI.Furnace9Patch
+        Actor background = new Image(Furnace9Patch);//TechModUI.Furnace9Patch
         Table slotActorTable = new Table();
         this.slotWidgets = new ItemSlotWidget[numSlots];
 

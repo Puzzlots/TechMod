@@ -25,7 +25,6 @@ public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements I
             int numSlots = getBlockEntityParamInt(block, "numSlots", 2);
             return new ElectricFurnaceBlockEntity(zone, x, y, z,new SlotContainer(numSlots));
         });
-
     }
 
     public ElectricFurnaceBlockEntity(Zone zone, int x, int y, int z,SlotContainer s) {

@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Furnace implements IModBlock {
 
-    public static final Identifier BLOCK_ID = new Identifier(Constants.MOD_ID, "Furnace");
+    public static final Identifier BLOCK_ID = new Identifier(Constants.MOD_ID, "furnace");
     public static final String BLOCK_NAME = "furnace";
 
 

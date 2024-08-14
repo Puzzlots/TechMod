@@ -16,6 +16,7 @@ import com.github.puzzlots.techmod.block_entities.ElectricFurnaceBlockEntity;
 import com.github.puzzlots.techmod.blocks.ElectricFurnace;
 import com.github.puzzlots.techmod.blocks.Furnace;
 import finalforeach.cosmicreach.GameAssetLoader;
+import finalforeach.cosmicreach.Threads;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.IOException;
@@ -27,9 +28,6 @@ public class TechMod implements ModInitializer {
         PuzzleRegistries.EVENT_BUS.register(this);
 
         Constants.LOGGER.info("Hello From INIT");
-
-        //TechModUI.Furnace9Patch = new NinePatch(new Texture(GameAssetLoader.loadAsset("tech-mod/textures/ui/furnace.png")), 4, 4, 4, 4);
-        //TechModUI.FurnaceSelected9Patch = new NinePatch(new Texture(GameAssetLoader.loadAsset("textures/ui/container-selected.png")), 4, 4, 4, 4);
         ElectricFurnaceBlockEntity.register();
     }
 
