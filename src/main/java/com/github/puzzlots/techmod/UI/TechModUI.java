@@ -1,21 +1,9 @@
 package com.github.puzzlots.techmod.UI;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.NinePatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.Action;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.github.puzzlots.techmod.Constants;
-import finalforeach.cosmicreach.GameAssetLoader;
-import finalforeach.cosmicreach.blocks.Block;
 import finalforeach.cosmicreach.gamestates.InGame;
-import finalforeach.cosmicreach.items.Hotbar;
-import finalforeach.cosmicreach.items.ItemCatalog;
-import finalforeach.cosmicreach.items.ItemSlotCursor;
 import finalforeach.cosmicreach.items.containers.SlotContainer;
-import finalforeach.cosmicreach.ui.Crosshair;
 import finalforeach.cosmicreach.ui.UI;
 
 import static finalforeach.cosmicreach.ui.UI.itemCatalog;

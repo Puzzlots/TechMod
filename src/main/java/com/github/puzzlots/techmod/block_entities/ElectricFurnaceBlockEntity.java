@@ -22,7 +22,7 @@ public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements I
     public static void register() {
         BlockEntityCreator.registerBlockEntityCreator(id.toString(), (blockState, zone, x, y, z) -> {
             Block block = blockState.getBlock();
-            int numSlots = getBlockEntityParamInt(block, "numSlots", 2);
+            int numSlots = getBlockEntityParamInt(block, "numSlots", 3);
             return new ElectricFurnaceBlockEntity(zone, x, y, z,new SlotContainer(numSlots));
         });
     }
@@ -39,7 +39,6 @@ public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements I
 
     @Override
     public void onInteract(Zone zone, BlockPosition blockPos, boolean interactJustPressed, boolean interactHeld, double timeSinceLastInteract) {
-        //UI.addOpenContainer(this.slotContainer);
         TechModUI.OpenFurnace(this.slotContainer);
 
     }

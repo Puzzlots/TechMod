@@ -6,17 +6,14 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.github.puzzlots.techmod.Constants;
 import finalforeach.cosmicreach.GameAssetLoader;
 import finalforeach.cosmicreach.items.BaseItemScreen;
 import finalforeach.cosmicreach.items.ISlotContainer;
 import finalforeach.cosmicreach.items.ItemSlotWidget;
-import finalforeach.cosmicreach.items.containers.CraftingSlotContainer;
-import finalforeach.cosmicreach.ui.UI;
 
 public class FurnaceScreen extends BaseItemScreen {
 
-    public static NinePatch Furnace9Patch = new NinePatch(new Texture(GameAssetLoader.loadAsset("tech-mod:textures/ui/furnace.png")), 4, 4, 4, 4);
+    public static NinePatch FurnaceBackground = new NinePatch(new Texture(GameAssetLoader.loadAsset("tech-mod:textures/ui/furnace.png")), 4, 4, 4, 4);
     public static NinePatch FurnaceSelected9Patch = new NinePatch(new Texture(GameAssetLoader.loadAsset("tech-mod:textures/ui/container-selected.png")), 4, 4, 4, 4);
     public ISlotContainer container;
 
@@ -27,31 +24,40 @@ public class FurnaceScreen extends BaseItemScreen {
     public FurnaceScreen(ISlotContainer container, int rows, int columns) {
         this.container = container;
         int numSlots = container.getNumSlots();
+
         Stack stack = new Stack();
-        Actor background = new Image(Furnace9Patch);//TechModUI.Furnace9Patch
-        Table slotActorTable = new Table();
+        Actor background = new Image(FurnaceBackground);
+
+        Table FurnaceFuel = new Table();
+        Table FurnaceOutTable = new Table();
+        Table FurnaceInTable = new Table();
+
         this.slotWidgets = new ItemSlotWidget[numSlots];
+        this.slotWidgets[0] = new ItemSlotWidget(container, container.getSlot(0));
+        this.slotWidgets[1] = new ItemSlotWidget(container, container.getSlot(1));
+        this.slotWidgets[2] = new ItemSlotWidget(container, container.getSlot(2));
 
-        for(int n = 0; n < numSlots; ++n) {
-            if (n > 0 && n % columns == 0) {
-                slotActorTable.row();
-            }
+        FurnaceInTable.add(this.slotWidgets[0]).left().top().pad(5);
+        FurnaceInTable.top().left().pad(5);
 
-            ItemSlotWidget slotWidget = new ItemSlotWidget(container, container.getSlot(n));
-            this.slotWidgets[n] = slotWidget;
-            slotActorTable.add(slotWidget);
-        }
+        FurnaceFuel.add(this.slotWidgets[1]).left().top().pad(5);
+        FurnaceFuel.bottom().left().pad(5);
 
-        slotActorTable.row();
-        slotActorTable.setWidth((float)(slotActorTable.getColumns() * 32));
-        slotActorTable.setHeight((float)(slotActorTable.getRows() * 32));
-        slotActorTable.setX(4.0F, 10);
-        slotActorTable.setY(4.0F, 10);
-        background.setWidth(slotActorTable.getWidth() + 8.0F);
-        background.setHeight(slotActorTable.getHeight() + 8.0F);
+        FurnaceOutTable.add(this.slotWidgets[2]).left().top().pad(5);
+        FurnaceOutTable.right().pad(5);
+
+
+        stack.setWidth((float) 320);
+        stack.setHeight((float) 300);
+        ((Actor)background).setWidth(100 + 8.0F);
+        ((Actor)background).setHeight(100 + 8.0F);
+
         stack.add(background);
-        stack.add(slotActorTable);
-        stack.setBounds(background.getX(), background.getY(), background.getWidth(), background.getHeight());
+        stack.add(FurnaceFuel);
+        stack.add(FurnaceInTable);
+        stack.add(FurnaceOutTable);
+        stack.setBounds(((Actor)background).getX(), ((Actor)background).getY(), ((Actor)background).getWidth(), ((Actor)background).getHeight());
+
         this.slotActor = stack;
         this.init();
     }
