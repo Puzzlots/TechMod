@@ -15,6 +15,9 @@
     ],
     "init": [
       "com.github.puzzlots.techmod.TechMod"
+    ],
+    "postInit": [
+      "com.github.puzzlots.techmod.TechModPostInit"
     ]
   },
   "mixins": [
