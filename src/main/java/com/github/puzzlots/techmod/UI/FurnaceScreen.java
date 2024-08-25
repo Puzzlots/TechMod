@@ -6,10 +6,13 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.github.puzzlots.techmod.Constants;
+import com.github.puzzlots.techmod.block_entities.ElectricFurnaceBlockEntity;
 import finalforeach.cosmicreach.GameAssetLoader;
-import finalforeach.cosmicreach.items.BaseItemScreen;
+import finalforeach.cosmicreach.items.screens.BaseItemScreen;
 import finalforeach.cosmicreach.items.ISlotContainer;
-import finalforeach.cosmicreach.items.ItemSlotWidget;
+import finalforeach.cosmicreach.ui.UI;
+import finalforeach.cosmicreach.ui.widgets.ItemSlotWidget;
 
 public class FurnaceScreen extends BaseItemScreen {
 

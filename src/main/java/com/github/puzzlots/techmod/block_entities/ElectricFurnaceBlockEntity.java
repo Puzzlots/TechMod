@@ -2,18 +2,18 @@ package com.github.puzzlots.techmod.block_entities;
 
 import com.github.puzzle.core.Identifier;
 import com.github.puzzle.game.blockentities.ExtendedBlockEntity;
-import com.github.puzzle.game.blockentities.ITickable;
 import com.github.puzzlots.techmod.UI.TechModUI;
 import finalforeach.cosmicreach.blockentities.BlockEntityCreator;
 import finalforeach.cosmicreach.blocks.Block;
 import finalforeach.cosmicreach.blocks.BlockPosition;
+import finalforeach.cosmicreach.entities.player.Player;
 import finalforeach.cosmicreach.io.CRBinDeserializer;
 import finalforeach.cosmicreach.io.CRBinSerializer;
 import finalforeach.cosmicreach.items.containers.SlotContainer;
 import finalforeach.cosmicreach.world.Zone;
 import com.github.puzzlots.techmod.Constants;
 
-public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements ITickable {
+public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity{
 
     public SlotContainer slotContainer;
 
@@ -37,10 +37,10 @@ public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements I
         return id.toString();
     }
 
-    @Override
-    public void onInteract(Zone zone, BlockPosition blockPos, boolean interactJustPressed, boolean interactHeld, double timeSinceLastInteract) {
+    public void onInteract(Player player, Zone zone) {
+        super.onInteract(player, zone);
         TechModUI.OpenFurnace(this.slotContainer);
-
+        Constants.LOGGER.info("interact");
     }
 
     public void onRemove() {
@@ -56,9 +56,5 @@ public class ElectricFurnaceBlockEntity extends ExtendedBlockEntity implements I
     public void write(CRBinSerializer crbs) {
         super.write(crbs);
         crbs.writeObj("slotContainer", this.slotContainer);
-    }
-    @Override
-    public void onTick(float tps) {
-
     }
 }
