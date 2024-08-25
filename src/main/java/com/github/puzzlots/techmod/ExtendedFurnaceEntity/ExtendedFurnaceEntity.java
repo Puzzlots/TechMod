@@ -1,7 +1,6 @@
 package com.github.puzzlots.techmod.ExtendedFurnaceEntity;
 
 import com.github.puzzle.annotations.Internal;
-import finalforeach.cosmicreach.blockentities.BlockEntity;
 import finalforeach.cosmicreach.blockentities.BlockEntityFurnace;
 import finalforeach.cosmicreach.io.CRBinDeserializer;
 import finalforeach.cosmicreach.io.CRBinSerializer;
@@ -22,7 +21,7 @@ public class ExtendedFurnaceEntity extends BlockEntityFurnace {
     }
 
     public String getBlockEntityId() {
-        return "puzzle:extendedBlockEntity";
+        return "puzzle:extendedFurnaceEntity";
     }
 
     public void read(CRBinDeserializer deserial) {
